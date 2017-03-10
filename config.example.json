@@ -1,0 +1,42 @@
+{    
+    "log": {
+        "type": "console",
+        "level": 10
+    },
+    
+    "counters": {
+        "type": "log",
+        "timeout": 10000
+    },
+    
+    "db": {
+        "type": "mongodb",
+        "uri": "mongodb://localhost/pipservicestest",
+        "options": {
+            "server": {
+                "poolSize": 4,
+                "socketOptions": {
+                    "keepAlive": 1,
+                    "connectTimeoutMS": 5000
+                },
+                "auto_reconnect": true
+            }
+        },
+        "debug": false        
+    },
+    
+    "deps": [],
+    
+    "api": [
+        {
+            "type": "rest",
+            "version": 1,
+            "transport": {
+                "type": "http",
+                "host": "0.0.0.0",
+                "port": 8001
+            }
+        }
+    ]
+    
+}
